@@ -1,0 +1,21 @@
+{
+    "name": "baseapi/api",
+    "authors": [
+        {
+            "name": "Ilham Fadil",
+            "email": "me.ilhamfadil@gmail.com"
+        }
+    ],
+    "require": {
+        "slim/slim": "3.*",
+        "haydenpierce/class-finder": "^0.4.2",
+        "izniburak/pdox": "^1.4"
+    },
+    "autoload": {
+        "classmap": [
+            "core/base",
+            "apps/middleware",
+            "apps/features"
+        ]
+    }
+}
