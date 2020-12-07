@@ -6,11 +6,16 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'Valitron\\' => array($vendorDir . '/vlucas/valitron/src/Valitron'),
     'Slim\\' => array($vendorDir . '/slim/slim/Slim'),
+    'Psr\\Log\\' => array($vendorDir . '/psr/log/Psr/Log'),
     'Psr\\Http\\Message\\' => array($vendorDir . '/psr/http-message/src'),
+    'Psr\\Http\\Client\\' => array($vendorDir . '/psr/http-client/src'),
     'Psr\\Container\\' => array($vendorDir . '/psr/container/src'),
-    'HaydenPierce\\ClassFinder\\UnitTest\\' => array($vendorDir . '/haydenpierce/class-finder/test/unit'),
-    'HaydenPierce\\ClassFinder\\' => array($vendorDir . '/haydenpierce/class-finder/src'),
+    'Monolog\\' => array($vendorDir . '/monolog/monolog/src/Monolog'),
+    'GuzzleHttp\\Psr7\\' => array($vendorDir . '/guzzlehttp/psr7/src'),
+    'GuzzleHttp\\Promise\\' => array($vendorDir . '/guzzlehttp/promises/src'),
+    'GuzzleHttp\\' => array($vendorDir . '/guzzlehttp/guzzle/src'),
     'FastRoute\\' => array($vendorDir . '/nikic/fast-route/src'),
     'Buki\\' => array($vendorDir . '/izniburak/pdox/src'),
 );

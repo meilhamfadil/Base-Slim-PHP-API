@@ -2,17 +2,17 @@
 
 namespace Features\Example;
 
-use Core\Base\BaseRoutes;
+use Core\Base\Routes;
 use Middleware\AppMiddleware;
 use Slim\App;
 
-class ExampleRoutes extends BaseRoutes
+class ExampleRoutes extends Routes
 {
     public function register(App $app)
     {
         $controller = "Features\Example\ExampleController";
 
-        $app->get("/example", "$controller:example")
+        $app->post("/example", "$controller:example")
             ->add(new AppMiddleware());
     }
 }

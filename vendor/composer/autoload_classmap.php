@@ -7,12 +7,16 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'Core\\Base\\App' => $baseDir . '/core/base/App.php',
-    'Core\\Base\\BaseRoutes' => $baseDir . '/core/base/BaseRoutes.php',
-    'ExampleModel' => $baseDir . '/apps/features/example/ExampleModel.php',
+    'Core\\Base\\Controller' => $baseDir . '/core/base/Controller.php',
+    'Core\\Base\\Model' => $baseDir . '/core/base/Model.php',
+    'Core\\Base\\Register' => $baseDir . '/core/base/Register.php',
+    'Core\\Base\\Routes' => $baseDir . '/core/base/Routes.php',
+    'Features\\Auth\\AuthController' => $baseDir . '/apps/features/auth/AuthController.php',
+    'Features\\Auth\\AuthModel' => $baseDir . '/apps/features/auth/AuthModel.php',
     'Features\\Auth\\AuthRoutes' => $baseDir . '/apps/features/auth/AuthRoutes.php',
     'Features\\Example\\ExampleController' => $baseDir . '/apps/features/example/ExampleController.php',
+    'Features\\Example\\ExampleModel' => $baseDir . '/apps/features/example/ExampleModel.php',
     'Features\\Example\\ExampleRoutes' => $baseDir . '/apps/features/example/ExampleRoutes.php',
-    'Middleware\\AppHook' => $baseDir . '/apps/middleware/AppHook.php',
     'Middleware\\AppMiddleware' => $baseDir . '/apps/middleware/AppMiddleware.php',
-    'RouteRegister' => $baseDir . '/core/base/RouteRegister.php',
+    'RoutesRegister' => $baseDir . '/core/base/RoutesRegister.php',
 );
