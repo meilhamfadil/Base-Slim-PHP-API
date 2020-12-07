@@ -2,12 +2,15 @@
 
 namespace Features\Auth;
 
-use Core\Base\BaseRoutes;
+use Core\Base\Routes;
 use Slim\App;
 
-class AuthRoutes extends BaseRoutes
+class AuthRoutes extends Routes
 {
     public function register(App $app)
     {
+        $controller = "Features\Auth\AuthController";
+
+        $app->post("/login", "$controller:login");
     }
 }

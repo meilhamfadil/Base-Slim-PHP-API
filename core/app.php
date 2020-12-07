@@ -1,6 +1,7 @@
 <?php
 
-use Middleware\AppHook;
+use Core\Base\App as BaseApp;
+use Core\Base\Register;
 use Slim\App;
 use Slim\Http\Request;
 use Slim\Http\Response;
@@ -8,23 +9,30 @@ use Slim\Http\Response;
 $app = new App(array(
     'settings' => array(
         'displayErrorDetails' => ENVIRONMENT != "production" || ENVIRONMENT != 'sandbox',
-        'determineRouteBeforeAppMiddleware' => true,
-        'addContentLengthHeader' => false,
-        'encryption_key' => "",
-        'jwt' => array(
-            'key' => "ingDLMRuGe9UKHRNjs7cYckS2yul4lc3",
-            'lifetime' => strtotime('+8 hours')
-        ),
+        'addContentLengthHeader' => true,
+        'logger' => [
+            'name' => 'app',
+            'path' => BASEPATH . "/../logs/" . date("Ymd") . ".log",
+        ],
+        'database' => [
+            'host' => 'localhost',
+            'driver' => 'mysql',
+            'database' => 'empty',
+            'username' => 'root',
+            'password' => '',
+            'charset' => 'utf8',
+            'collation' => 'utf8_general_ci',
+            'prefix' => ''
+        ]
     )
 ));
 
-
 $app->get('/favicon.ico', function (Request $request, Response $response, $args) {
-    return $response->withStatus(204, "No Content");
+    return BaseApp::sendError("No Content", 204);
 });
 
 $app->get("/", function (Request $request, Response $response, $args) {
-    return $response->withStatus(403)->write("Forbidden");
+    return BaseApp::sendError("Forbidden", 403);
 });
 
-$app->add(new AppHook());
+$app->add(new Register($app->getContainer()));

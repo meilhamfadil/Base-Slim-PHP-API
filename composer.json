@@ -8,14 +8,17 @@
     ],
     "require": {
         "slim/slim": "3.*",
-        "haydenpierce/class-finder": "^0.4.2",
-        "izniburak/pdox": "^1.4"
+        "izniburak/pdox": "^1.4",
+        "guzzlehttp/guzzle": "^7.0",
+        "monolog/monolog": "^2.1",
+        "vlucas/valitron": "^1.4"
     },
     "autoload": {
         "classmap": [
             "core/base",
             "apps/middleware",
-            "apps/features"
+            "apps/features",
+            "apps/helpers"
         ]
     }
 }
