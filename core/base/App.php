@@ -51,6 +51,7 @@ class App
     public static function container(ContainerInterface $container)
     {
         self::$container = $container;
+        self::$logger = $container->get("logger");
     }
 
     /**
@@ -65,7 +66,7 @@ class App
     {
         $body = self::$request->getParsedBody();
         if (!is_null($body)) {
-            self::$logger->info("Body :", $body);
+            self::$logger->info("Body :", cencorData($body));
         }
         return (object) $body;
     }

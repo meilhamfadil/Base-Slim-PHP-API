@@ -17,7 +17,8 @@
         "classmap": [
             "core/base",
             "apps/middleware",
-            "apps/features"
+            "apps/features",
+            "apps/helpers"
         ]
     }
 }

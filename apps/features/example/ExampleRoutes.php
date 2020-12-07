@@ -3,7 +3,6 @@
 namespace Features\Example;
 
 use Core\Base\Routes;
-use Middleware\AppMiddleware;
 use Slim\App;
 
 class ExampleRoutes extends Routes
@@ -12,7 +11,6 @@ class ExampleRoutes extends Routes
     {
         $controller = "Features\Example\ExampleController";
 
-        $app->post("/example", "$controller:example")
-            ->add(new AppMiddleware());
+        $app->get("/example", "$controller:example");
     }
 }

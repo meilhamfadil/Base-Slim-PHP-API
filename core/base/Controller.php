@@ -19,7 +19,6 @@ class Controller
     {
         $this->container = $container;
         $this->logger = $container->get("logger");
-        $this->logger->info("Controller Openned");
         $this->onLoad();
     }
 
@@ -34,6 +33,7 @@ class Controller
         $data = json_decode($body->getContents(), true);
         if (!is_null($data))
             $this->logger->info("Response : ", $data);
-        $this->logger->info("Controller Closed");
+        App::$logger->info("Finish");
+        App::$logger->info("--------------------------------------------------");
     }
 }

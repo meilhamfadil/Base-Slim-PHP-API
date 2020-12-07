@@ -19,8 +19,9 @@ class ExampleController extends Controller
 
     public function example(Request $request, Response $response, array $args)
     {
-        $data = $this->model->getData();
-
+        $params = App::getParams();
+        $data = $this->model->getUsers(property_exists($params, "username") ? $params->username : "");
+        
         return App::send($data);
     }
 }

@@ -12,4 +12,7 @@ require_once BASEPATH . "/dependencies.php";
 // Require Routes
 require_once BASEPATH . "/routes.php";
 
+// Require Helpers
+require_once BASEPATH . "/helpers.php";
+
 $app->run();

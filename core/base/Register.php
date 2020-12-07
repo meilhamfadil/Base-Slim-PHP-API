@@ -21,6 +21,9 @@ class Register
     {
         App::register($request, $response);
         App::container($this->container);
-        return $response = $next($request, $response);
+        App::$logger->info("--------------------------------------------------");
+        App::$logger->info("Start");
+        App::$logger->info("Header : ", $request->getHeaders());
+        return $response = App::$response = $next($request, $response);
     }
 }
